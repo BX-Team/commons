@@ -8,7 +8,7 @@ repositories {
 }
 
 dependencies {
-    api("org.jetbrains:annotations:24.1.0")
+    api("org.jetbrains:annotations:26.0.1")
 
     compileOnly("io.papermc.paper:paper-api:1.19.4-R0.1-SNAPSHOT")
     testImplementation("io.papermc.paper:paper-api:1.19.4-R0.1-SNAPSHOT")

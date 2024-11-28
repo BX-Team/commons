@@ -5,8 +5,7 @@ plugins {
 }
 
 dependencies {
-    api(project(":commons-shared"))
     api("org.jetbrains:annotations:26.0.1")
 
-    compileOnlyApi("dev.folia:folia-api:1.20.1-R0.1-SNAPSHOT")
+    compileOnly("com.google.code.gson:gson:2.10")
 }

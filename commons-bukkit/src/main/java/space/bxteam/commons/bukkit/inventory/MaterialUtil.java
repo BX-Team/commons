@@ -1,6 +1,5 @@
 package space.bxteam.commons.bukkit.inventory;
 
-import org.apache.commons.lang3.StringUtils;
 import org.bukkit.Material;
 import org.jetbrains.annotations.NotNull;
 
@@ -18,6 +17,7 @@ public final class MaterialUtil {
      * @return the formatted material name
      */
     public static String format(@NotNull Material material) {
-        return StringUtils.capitalize(material.name().toLowerCase().replace("_", " "));
+        String name = material.name().toLowerCase().replace("_", " ");
+        return name.substring(0, 1).toUpperCase() + name.substring(1);
     }
 }

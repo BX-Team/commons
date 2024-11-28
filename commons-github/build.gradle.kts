@@ -7,5 +7,5 @@ plugins {
 dependencies {
     api("org.jetbrains:annotations:26.0.1")
 
-    compileOnly("com.google.code.gson:gson:2.10")
+    compileOnly("com.google.code.gson:gson:2.11.0")
 }

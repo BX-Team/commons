@@ -1,10 +1,15 @@
 plugins {
     `java-library`
+    `maven-publish`
 }
+
+group = project.group
+version = project.version
 
 repositories {
     mavenCentral()
     maven("https://repo.papermc.io/repository/maven-public/")
+    maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
 }
 
 dependencies {
@@ -22,5 +27,26 @@ tasks {
     }
     withType<Test> {
         useJUnitPlatform()
+    }
+}
+
+publishing {
+    repositories {
+        maven {
+            url = uri("https://repo.bx-team.space/releases/")
+
+            if (project.version.toString().endsWith("-SNAPSHOT")) {
+                url = uri("https://repo.bx-team.space/snapshots/")
+            }
+            credentials(PasswordCredentials::class)
+            authentication {
+                create<BasicAuthentication>("basic")
+            }
+        }
+    }
+    publications {
+        create<MavenPublication>("maven") {
+            from(components["java"])
+        }
     }
 }

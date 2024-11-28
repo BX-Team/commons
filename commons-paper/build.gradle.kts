@@ -6,6 +6,7 @@ plugins {
 
 dependencies {
     api(project(":commons-shared"))
-    api("net.kyori:adventure-text-minimessage:4.17.0")
-    api("net.kyori:adventure-text-serializer-legacy:4.17.0")
+    api("org.jetbrains:annotations:26.0.1")
+
+    compileOnlyApi("dev.folia:folia-api:1.20.1-R0.1-SNAPSHOT")
 }

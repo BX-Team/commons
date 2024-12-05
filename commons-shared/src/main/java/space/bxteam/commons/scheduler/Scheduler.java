@@ -11,6 +11,7 @@ import java.util.concurrent.Future;
 
 public interface Scheduler {
     /**
+     * <b>Folia</b>: Returns whether the current thread is ticking the global region <br>
      * <b>Paper & Bukkit</b>: Returns {@link org.bukkit.Server#isPrimaryThread}
      */
     boolean isGlobalThread();
@@ -23,7 +24,7 @@ public interface Scheduler {
     }
 
     /**
-     * <b>Paper</b>: Returns whether the current thread is ticking a region and that the region
+     * <b>Folia & Paper</b>: Returns whether the current thread is ticking a region and that the region
      * being ticked owns the specified entity. Note that this function is the only appropriate method of
      * checking for ownership of an entity, as retrieving the entity's location is undefined unless the
      * entity is owned by the current region
@@ -35,7 +36,7 @@ public interface Scheduler {
     boolean isEntityThread(Entity entity);
 
     /**
-     * <b>Paper</b>: Returns whether the current thread is ticking a region and that the region
+     * <b>Folia & Paper</b>: Returns whether the current thread is ticking a region and that the region
      * being ticked owns the chunk at the specified world and block position as included in the specified location
      * <p>
      * <b>Bukkit</b>: returns {@link org.bukkit.Server#isPrimaryThread}
@@ -46,7 +47,7 @@ public interface Scheduler {
 
     /**
      * Schedules a task to be executed on the next tick <br>
-     * <b>Paper</b>: ...on the global region <br>
+     * <b>Folia & Paper</b>: ...on the global region <br>
      * <b>Bukkit</b>: ...on the main thread
      *
      * @param runnable The task to execute
@@ -55,7 +56,7 @@ public interface Scheduler {
 
     /**
      * Schedules a task to be executed after the specified delay in ticks <br>
-     * <b>Paper</b>: ...on the global region <br>
+     * <b>Folia & Paper</b>: ...on the global region <br>
      * <b>Bukkit</b>: ...on the main thread
      *
      * @param runnable The task to execute
@@ -65,7 +66,7 @@ public interface Scheduler {
 
     /**
      * Schedules a repeating task to be executed after the initial delay with the specified period <br>
-     * <b>Paper</b>: ...on the global region <br>
+     * <b>Folia & Paper</b>: ...on the global region <br>
      * <b>Bukkit</b>: ...on the main thread
      *
      * @param runnable The task to execute
@@ -75,7 +76,7 @@ public interface Scheduler {
     Task runTaskTimer(Runnable runnable, long delay, long period);
 
     /**
-     * <b>Paper</b>: Schedules a task to be executed on the region which owns the location on the next tick
+     * <b>Folia & Paper</b>: Schedules a task to be executed on the region which owns the location on the next tick
      * <p>
      * <b>Bukkit</b>: same as {@link #runTask(Runnable)}
      *
@@ -87,7 +88,7 @@ public interface Scheduler {
     }
 
     /**
-     * <b>Paper</b>: Schedules a task to be executed on the region which owns the location after the
+     * <b>Folia & Paper</b>: Schedules a task to be executed on the region which owns the location after the
      * specified delay in ticks
      * <p>
      * <b>Bukkit</b>: same as {@link #runTaskLater(Runnable, long)}
@@ -101,7 +102,7 @@ public interface Scheduler {
     }
 
     /**
-     * <b>Paper</b>: Schedules a repeating task to be executed on the region which owns the location
+     * <b>Folia & Paper</b>: Schedules a repeating task to be executed on the region which owns the location
      * after the initial delay with the specified period
      * <p>
      * <b>Bukkit</b>: same as {@link #runTaskTimer(Runnable, long, long)}
@@ -116,7 +117,7 @@ public interface Scheduler {
     }
 
     /**
-     * <b>Paper</b>: Schedules a task to be executed on the region which owns the location
+     * <b>Folia & Paper</b>: Schedules a task to be executed on the region which owns the location
      * of given entity on the next tick
      * <p>
      * <b>Bukkit</b>: same as {@link #runTask(Runnable)}
@@ -129,7 +130,7 @@ public interface Scheduler {
     }
 
     /**
-     * <b>Paper</b>: Schedules a task to be executed on the region which owns the location
+     * <b>Folia & Paper</b>: Schedules a task to be executed on the region which owns the location
      * of given entity after the specified delay in ticks
      * <p>
      * <b>Bukkit</b>: same as {@link #runTaskLater(Runnable, long)}
@@ -143,7 +144,7 @@ public interface Scheduler {
     }
 
     /**
-     * <b>Paper</b>: Schedules a repeating task to be executed on the region which owns the
+     * <b>Folia & Paper</b>: Schedules a repeating task to be executed on the region which owns the
      * location of given entity after the initial delay with the specified period
      * <p>
      * <b>Bukkit</b>: same as {@link #runTaskTimer(Runnable, long, long)}

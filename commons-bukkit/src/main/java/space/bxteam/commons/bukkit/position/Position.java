@@ -1,7 +1,5 @@
 package space.bxteam.commons.bukkit.position;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -22,7 +20,7 @@ public record Position(double x, double y, double z, float yaw, float pitch, Str
         this(x, 0.0, z, 0F, 0F, world);
     }
 
-    public static @NotNull Position parse(String parse) {
+    public static Position parse(String parse) {
         Matcher matcher = PARSE_FORMAT.matcher(parse);
 
         if (!matcher.find()) {
@@ -40,12 +38,18 @@ public record Position(double x, double y, double z, float yaw, float pitch, Str
     }
 
     @Override
-    public @NotNull String toString() {
-        return String.format("Position{x=%.2f, y=%.2f, z=%.2f, yaw=%.2f, pitch=%.2f, world='%s'}",
-                x, y, z, yaw, pitch, world);
+    public String toString() {
+        return "Position{" +
+                "x=" + this.x +
+                ", y=" + this.y +
+                ", z=" + this.z +
+                ", yaw=" + this.yaw +
+                ", pitch=" + this.pitch +
+                ", world='" + this.world + '\'' +
+                '}';
     }
 
     public boolean isNoneWorld() {
-        return NONE_WORLD.equals(world);
+        return this.world.equals(NONE_WORLD);
     }
 }

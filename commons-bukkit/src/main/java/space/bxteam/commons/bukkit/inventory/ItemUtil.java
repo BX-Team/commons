@@ -2,10 +2,11 @@ package space.bxteam.commons.bukkit.inventory;
 
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.jetbrains.annotations.ApiStatus;
+
+import java.util.HashMap;
 
 /**
  * Utility class for handling item manipulations.
@@ -55,10 +56,21 @@ public final class ItemUtil {
         if (itemStack == null || itemStack.getAmount() <= 0) return;
 
         PlayerInventory inventory = player.getInventory();
-        if (hasSpace(inventory, itemStack)) {
-            inventory.addItem(itemStack);
-        } else {
-            player.getWorld().dropItemNaturally(player.getLocation(), itemStack);
+        int maxStackSize = itemStack.getMaxStackSize();
+        int amount = itemStack.getAmount();
+
+        while (amount > 0) {
+            int giveAmount = Math.min(amount, maxStackSize);
+            ItemStack stackToGive = new ItemStack(itemStack);
+            stackToGive.setAmount(giveAmount);
+
+            if (hasSpace(inventory, stackToGive)) {
+                inventory.addItem(stackToGive);
+            } else {
+                player.getWorld().dropItemNaturally(player.getLocation(), stackToGive);
+            }
+
+            amount -= giveAmount;
         }
     }
 
@@ -70,15 +82,9 @@ public final class ItemUtil {
      * @return true if there is space for the item, false otherwise
      */
     @ApiStatus.Internal
-    private static boolean hasSpace(Inventory inventory, ItemStack itemStack) {
-        if (inventory.firstEmpty() != -1) return true;
-
-        for (ItemStack item : inventory.getContents()) {
-            if (item != null && item.isSimilar(itemStack) && item.getAmount() < item.getMaxStackSize()) {
-                return true;
-            }
-        }
-
-        return false;
+    private static boolean hasSpace(PlayerInventory inventory, ItemStack itemStack) {
+        HashMap<Integer, ItemStack> leftover = inventory.addItem(itemStack);
+        inventory.removeItem(itemStack);
+        return leftover.isEmpty();
     }
 }

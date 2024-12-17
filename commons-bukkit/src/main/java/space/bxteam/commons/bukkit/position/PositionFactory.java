@@ -19,8 +19,10 @@ public final class PositionFactory {
      * @param location the location to convert
      * @return the converted position
      */
-    public static Position convert(@NotNull Location location) {
-        location.getWorld();
+    public static Position convert(Location location) {
+        if (location.getWorld() == null) {
+            throw new IllegalStateException("World is not defined");
+        }
 
         return new Position(
                 location.getX(),

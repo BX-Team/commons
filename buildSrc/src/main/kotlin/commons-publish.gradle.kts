@@ -20,10 +20,10 @@ java {
 publishing {
     repositories {
         maven {
-            url = uri("https://repo.bx-team.space/releases/")
+            url = uri("https://repo.bxteam.org/releases/")
 
             if (project.version.toString().endsWith("-SNAPSHOT")) {
-                url = uri("https://repo.bx-team.space/snapshots/")
+                url = uri("https://repo.bxteam.org/snapshots/")
             }
             credentials(PasswordCredentials::class)
             authentication {

@@ -6,7 +6,7 @@ plugins {
 
 dependencies {
     api(project(":commons-shared"))
-    api("org.jetbrains:annotations:26.0.1")
+    api("org.jetbrains:annotations:26.0.2")
 
     compileOnly("org.spigotmc:spigot-api:1.19.4-R0.1-SNAPSHOT")
     testImplementation("org.spigotmc:spigot-api:1.19.4-R0.1-SNAPSHOT")

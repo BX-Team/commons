@@ -28,7 +28,9 @@ dependencies {
     api("org.jetbrains:annotations:26.0.1")
 
     // For testing
-    testImplementation("org.junit.jupiter:junit-jupiter:5.9.3")
+    testImplementation(platform("org.junit:junit-bom:5.12.0"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
 tasks {

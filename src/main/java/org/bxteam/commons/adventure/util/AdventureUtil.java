@@ -1,4 +1,4 @@
-package org.bxteam.commons.adventure;
+package org.bxteam.commons.adventure.util;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;

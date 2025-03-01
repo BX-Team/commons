@@ -1,8 +1,8 @@
-package org.bxteam.commons.paper.scheduler;
+package org.bxteam.commons.scheduler.paper;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
-import org.bxteam.commons.folia.scheduler.FoliaScheduler;
+import org.bxteam.commons.scheduler.folia.FoliaScheduler;
 
 public class PaperScheduler extends FoliaScheduler {
     public PaperScheduler(Plugin plugin) {

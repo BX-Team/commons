@@ -1,4 +1,4 @@
-package org.bxteam.commons.folia.scheduler;
+package org.bxteam.commons.scheduler.folia;
 
 import io.papermc.paper.threadedregions.scheduler.AsyncScheduler;
 import io.papermc.paper.threadedregions.scheduler.GlobalRegionScheduler;

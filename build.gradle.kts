@@ -14,8 +14,8 @@ repositories {
 
 dependencies {
     // Adventure module
-    api("net.kyori:adventure-text-minimessage:4.18.0")
-    api("net.kyori:adventure-text-serializer-legacy:4.18.0")
+    api("net.kyori:adventure-text-minimessage:4.19.0")
+    api("net.kyori:adventure-text-serializer-legacy:4.19.0")
 
     // Bukkit module
     compileOnly("org.spigotmc:spigot-api:1.19.4-R0.1-SNAPSHOT")
@@ -25,7 +25,7 @@ dependencies {
     compileOnlyApi("dev.folia:folia-api:1.20.1-R0.1-SNAPSHOT")
 
     // For all modules
-    api("org.jetbrains:annotations:26.0.1")
+    api("org.jetbrains:annotations:26.0.2")
 
     // For testing
     testImplementation(platform("org.junit:junit-bom:5.12.0"))

@@ -26,6 +26,9 @@ dependencies {
 
     // For all modules
     api("org.jetbrains:annotations:26.0.1")
+
+    // For testing
+    testImplementation("org.junit.jupiter:junit-jupiter:5.9.3")
 }
 
 tasks {
@@ -36,6 +39,9 @@ tasks {
     }
     withType<JavaCompile> {
         options.encoding = "UTF-8"
+    }
+    test {
+        useJUnitPlatform()
     }
 }
 

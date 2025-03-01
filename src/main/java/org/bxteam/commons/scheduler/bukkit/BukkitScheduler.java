@@ -1,4 +1,4 @@
-package org.bxteam.commons.bukkit.scheduler;
+package org.bxteam.commons.scheduler.bukkit;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;

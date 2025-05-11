@@ -5,15 +5,15 @@ plugins {
 }
 
 dependencies {
-    api("org.jetbrains:annotations:26.0.2")
-    implementation("org.apache.maven:maven-artifact:3.9.9")
+    api(libs.annotations)
+    implementation(libs.maven.artifact)
 
-    compileOnly("org.spigotmc:spigot-api:1.19.4-R0.1-SNAPSHOT")
-    testImplementation("org.spigotmc:spigot-api:1.19.4-R0.1-SNAPSHOT")
+    compileOnly(libs.spigot)
+    testImplementation(libs.spigot)
 
-    testImplementation(platform("org.junit:junit-bom:5.12.2"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    testImplementation(platform(libs.junit.bom))
+    testImplementation(libs.junit.jupiter)
+    testRuntimeOnly(libs.junit.platform.launcher)
 }
 
 tasks {

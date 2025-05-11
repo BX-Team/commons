@@ -1,0 +1,25 @@
+[versions]
+adventure = "4.21.0"
+annotations = "26.0.2"
+maven-artifact = "3.9.9"
+spigot = "1.19.4-R0.1-SNAPSHOT"
+folia = "1.20.1-R0.1-SNAPSHOT"
+junit = "5.12.2"
+
+[libraries]
+# Adventure API
+adventure-text-minimessage = { module = "net.kyori:adventure-text-minimessage", version.ref = "adventure" }
+adventure-text-serializer-legacy = { module = "net.kyori:adventure-text-serializer-legacy", version.ref = "adventure" }
+
+# Other libraries
+annotations = { module = "org.jetbrains:annotations", version.ref = "annotations" }
+maven-artifact = { module = "org.apache.maven:maven-artifact", version.ref = "maven-artifact" }
+
+# Minecraft
+spigot = { module = "org.spigotmc:spigot-api", version.ref = "spigot" }
+folia = { module = "dev.folia:folia-api", version.ref = "folia" }
+
+# Testing
+junit-bom = { module = "org.junit:junit-bom", version.ref = "junit" }
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter" }
+junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher" }

@@ -8,5 +8,5 @@ dependencies {
     api(project(":commons-shared"))
     api(project(":commons-bukkit"))
 
-    compileOnlyApi("dev.folia:folia-api:1.20.1-R0.1-SNAPSHOT")
+    compileOnlyApi(libs.folia)
 }

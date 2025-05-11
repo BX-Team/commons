@@ -3,6 +3,7 @@
   "extends": [
     "config:recommended"
   ],
+  "dependencyDashboard": false,
   "groupName": "all dependencies",
   "groupSlug": "all",
   "lockFileMaintenance": {

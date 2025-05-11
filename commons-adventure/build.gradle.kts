@@ -6,6 +6,6 @@ plugins {
 
 dependencies {
     api(project(":commons-shared"))
-    api("net.kyori:adventure-text-minimessage:4.19.0")
-    api("net.kyori:adventure-text-serializer-legacy:4.19.0")
+    api("net.kyori:adventure-text-minimessage:4.21.0")
+    api("net.kyori:adventure-text-serializer-legacy:4.21.0")
 }

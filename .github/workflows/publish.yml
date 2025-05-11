@@ -24,4 +24,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Publish with Gradle
-        run: ./gradlew publish -PmavenUsername=${{ secrets.REPO_USERNAME }} -PmavenPassword=${{ secrets.REPO_SECRET }}
+        run: ./gradlew publish
+        env:
+          REPO_USERNAME: ${{ secrets.REPO_USERNAME }}
+          REPO_PASSWORD: ${{ secrets.REPO_SECRET }}

@@ -1,0 +1,15 @@
+# Intellij IDEA
+*.iml
+*.ipr
+*.iws
+.idea/
+.gradle/
+run/
+out/
+build/
+.kotlin
+
+.DS_Store
+[Dd]esktop.ini
+
+!gradle/wrapper/gradle-wrapper.jar

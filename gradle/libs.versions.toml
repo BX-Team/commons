@@ -1,9 +1,9 @@
 [versions]
 annotations = "26.0.2"
-maven-artifact = "3.9.10"
+maven-artifact = "3.9.11"
 spigot = "1.19.4-R0.1-SNAPSHOT"
 folia = "1.20.1-R0.1-SNAPSHOT"
-junit = "5.13.2"
+junit = "5.13.4"
 
 [libraries]
 
